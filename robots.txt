@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dranthonymarte.github.io/dranthonymarte.com/sitemap.xml
