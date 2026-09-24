@@ -1015,6 +1015,28 @@
                 gap: 30px;
             }
         }
+        /* AGENDA EN LÍNEA */
+        .btn-ghost { background: transparent; color: var(--secondary); box-shadow: inset 0 0 0 1.5px rgba(0, 102, 179, 0.35); }
+        .btn-ghost:hover { transform: translateY(-4px); box-shadow: inset 0 0 0 1.5px var(--secondary); }
+        .btn-ghost-light { color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.55); }
+        .btn-ghost-light:hover { box-shadow: inset 0 0 0 1.5px #fff; }
+        .cta-buttons { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+        .agendar-section { background: linear-gradient(180deg, #F7FAFC 0%, #EEF5FF 100%); scroll-margin-top: 80px; }
+        .agendar-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
+        .agendar-eyebrow { font-size: 0.8em; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--secondary); }
+        .agendar-section h2.agendar-title { opacity: 1; font-size: 3.2em; margin: 14px 0 20px; }
+        .agendar-copy p { font-size: 1.1em; color: var(--text-light); max-width: 46ch; }
+        .agendar-points { list-style: none; margin-top: 28px; display: grid; gap: 14px; }
+        .agendar-points li { display: flex; gap: 12px; align-items: center; font-weight: 500; }
+        .agendar-points li::before { content: ""; width: 22px; height: 22px; flex: none; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), var(--accent)); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0a12 12 0 100 24 12 12 0 000-24zm-1.5 16.5l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7z'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0a12 12 0 100 24 12 12 0 000-24zm-1.5 16.5l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7z'/%3E%3C/svg%3E") center / contain no-repeat; }
+        .agendar-points a { color: var(--secondary); font-weight: 600; }
+        .agendar-frame { background: #fff; border-radius: 20px; box-shadow: 0 30px 80px -30px rgba(10, 31, 63, 0.25), 0 0 0 1px rgba(10, 31, 63, 0.05); padding: 22px; }
+        .agendar-frame iframe { display: block; width: 100%; height: 560px; border: 0; transition: height 0.25s ease; }
+        @media (max-width: 900px) {
+            .agendar-grid { grid-template-columns: 1fr; gap: 32px; }
+            .agendar-section h2.agendar-title { font-size: 2.3em; }
+            .agendar-frame { padding: 12px; }
+        }
     </style>
 </head>
 <body>
@@ -1028,7 +1050,7 @@
                 <a href="#testimonios">Testimonios</a>
                 <a href="#faq">Preguntas</a>
                 <a href="#caso">Contacto</a>
-                <a href="https://wa.me/584120341599?text=Hola%20Dr.%20Anthony%20Marte%2C%20me%20gustaría%20agendar%20una%20evaluación%20odontológica." target="_blank" rel="noopener noreferrer" class="btn-header">Agendar</a>
+                <a href="#agendar" class="btn-header">Agendar cita</a>
             </nav>
         </div>
     </header>
@@ -1044,7 +1066,8 @@
                 <h1>Extracción de <span>cordales</span> y atención odontológica en Caracas</h1>
                 <p>Evaluación profesional para tratar el dolor dental, cordales (muelas del juicio), dientes fracturados o infecciones. Atención odontológica con diagnóstico responsable antes de cualquier procedimiento.</p>
                 <div class="hero-buttons">
-                    <a href="https://wa.me/584120341599?text=Hola%20Dr.%20Anthony%20Marte%2C%20me%20gustaría%20agendar%20una%20evaluación%20odontológica." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Contartar por WhatsApp</a>
+                    <a href="#agendar" class="btn btn-primary">Agendar cita en línea</a>
+                    <a href="https://wa.me/584120341599?text=Hola%20Dr.%20Anthony%20Marte%2C%20me%20gustaría%20agendar%20una%20evaluación%20odontológica." target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Escribir por WhatsApp</a>
                 </div>
                 <div class="hero-hours">
                     <strong>Atención de lunes a sábado</strong><br>8:00 am – 5:00 pm
@@ -1305,12 +1328,32 @@
         </div>
     </section>
 
+    <!-- AGENDA EN LÍNEA (Essential Dental): reserva aquí mismo, sin salir de la página -->
+    <section id="agendar" class="agendar-section">
+        <div class="container agendar-grid">
+            <div class="agendar-copy">
+                <span class="agendar-eyebrow">Agenda en línea</span>
+                <h2 class="agendar-title">Elige tu día y hora</h2>
+                <p>Ves solo los horarios libres del Dr. Anthony Marte. Tu cita queda registrada al instante y te confirmamos por WhatsApp.</p>
+                <ul class="agendar-points">
+                    <li><span>Consulta de 30 minutos</span></li>
+                    <li><span>Sin pago para reservar</span></li>
+                    <li><span>¿Ya eres paciente? <a href="https://clinica-dental-app.pages.dev/portal" target="_blank" rel="noopener">Ver o cambiar mis citas</a></span></li>
+                </ul>
+            </div>
+            <div class="agendar-frame">
+                <iframe id="agenda-frame" src="https://clinica-dental-app.pages.dev/agenda/dr-anthony-marte?embed" title="Agendar cita con el Dr. Anthony Marte" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
     <!-- 8. CTA FINAL -->
     <section class="cta-final">
         <div class="cta-content">
             <h2>¿Presentas inflamación y dolor? ¿Molestia por cordales?</h2>
-            <p>Puedes escribir directamente para recibir orientación inicial</p>
-            <a href="https://wa.me/584120341599?text=Hola%20Dr.%20Anthony%20Marte%2C%20me%20gustaría%20agendar%20una%20evaluación%20odontológica." target="_blank" rel="noopener noreferrer" class="btn btn-primary">Contactar por WhatsApp</a>
+            <p>Elige tu día y hora en línea, o escribe directamente para recibir orientación inicial</p>
+            <div class="cta-buttons"><a href="#agendar" class="btn btn-primary">Agendar cita en línea</a>
+            <a href="https://wa.me/584120341599?text=Hola%20Dr.%20Anthony%20Marte%2C%20me%20gustaría%20agendar%20una%20evaluación%20odontológica." target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-ghost-light">Escribir por WhatsApp</a></div>
         </div>
     </section>
 
@@ -1375,6 +1418,18 @@
             // Header scroll
             window.addEventListener('scroll', () => {
                 document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // Agenda en línea: la altura del recuadro sigue a su contenido (sin doble barra de desplazamiento)
+            window.addEventListener('message', function(e) {
+                if (e.origin !== "https://clinica-dental-app.pages.dev" || !e.data || e.data.type !== 'essential-dental:height') return;
+                document.getElementById('agenda-frame').style.height = Math.max(420, e.data.height) + 'px';
+            });
+            document.querySelectorAll('a[href="#agendar"]').forEach(function(el) {
+                el.addEventListener('click', function() {
+                    if (typeof fbq !== 'undefined') fbq('track', 'Schedule');
+                    if (typeof gtag !== 'undefined') gtag('event', 'click_agendar', { event_category: 'contacto' });
+                });
             });
 
             // Tracking WhatsApp clicks
