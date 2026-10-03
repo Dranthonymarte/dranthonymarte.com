@@ -1342,11 +1342,11 @@
                 <ul class="agendar-points">
                     <li><span>Consulta de 30 minutos</span></li>
                     <li><span>Sin pago para reservar</span></li>
-                    <li><span>¿Ya eres paciente? <a href="https://clinica-dental-app.pages.dev/portal" target="_blank" rel="noopener">Ver o cambiar mis citas</a></span></li>
+                    <li><span>¿Ya eres paciente? <a href="https://essentialdental.app/mis-citas" target="_blank" rel="noopener">Ver o cambiar mis citas</a></span></li>
                 </ul>
             </div>
             <div class="agendar-frame">
-                <iframe id="agenda-frame" src="https://clinica-dental-app.pages.dev/agenda/dr-anthony-marte?embed" title="Agendar cita con el Dr. Anthony Marte" loading="lazy"></iframe>
+                <iframe id="agenda-frame" src="https://essentialdental.app/agenda/dr-anthony-marte?embed" title="Agendar cita con el Dr. Anthony Marte" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -1426,7 +1426,7 @@
 
             // Agenda en línea: la altura del recuadro sigue a su contenido (sin doble barra de desplazamiento)
             window.addEventListener('message', function(e) {
-                if (e.origin !== "https://clinica-dental-app.pages.dev" || !e.data || e.data.type !== 'essential-dental:height') return;
+                if (e.origin !== "https://essentialdental.app" || !e.data || e.data.type !== 'essential-dental:height') return;
                 document.getElementById('agenda-frame').style.height = Math.max(420, e.data.height) + 'px';
             });
             document.querySelectorAll('a[href="#agendar"]').forEach(function(el) {
